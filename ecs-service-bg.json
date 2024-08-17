@@ -1,0 +1,26 @@
+{
+    "cluster": "ecs-bluegreen-cluster",
+    "serviceName": "ecs-service-bluegreen",
+    "taskDefinition": "ecs-bg-task-def",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:580285112064:targetgroup/bgprodtarget/b851bea10e7a43ea",
+            "containerName": "php-app",
+            "containerPort": 80
+        }
+    ],
+    "launchType": "FARGATE",
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "CODE_DEPLOY"
+    },
+    "platformVersion": "LATEST",
+    "networkConfiguration": {
+       "awsvpcConfiguration": {
+          "assignPublicIp": "ENABLED",
+          "securityGroups": [ "sg-068ad7fba9fae082b" ],
+          "subnets": [ "subnet-663ac02b", "subnet-2ee7d072" ]
+       }
+    },
+    "desiredCount": 2
+}

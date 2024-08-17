@@ -1,0 +1,29 @@
+
+{
+    "family": "ecs-bg-task-def",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::580285112064:role/ecsTaskExecutionRole-v1",
+    "taskRoleArn": "arn:aws:iam::580285112064:role/ecsTaskRole",        
+    "containerDefinitions": [
+        {
+            "name": "php-app",
+            "image": "<IMAGE>",
+            "essential": true, 
+            "taskDefinitionArn": "<TASK_DEFINITION>",
+            "portMappings": [
+                {
+                  "hostPort": 80,
+                  "protocol": "tcp",
+                  "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+} 
+
+  

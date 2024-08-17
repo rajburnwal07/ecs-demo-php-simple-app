@@ -3,11 +3,11 @@
     "source": {
       "type": "GITHUB",
       "location": "https://github.com/rajburnwal07/ecs-demo-php-simple-app.git",
-      "buildspec": "buildspec.yml",
+      "buildspec": "buildspec.yaml",
       "gitCloneDepth": 1
 
     },
-    "sourceVersion": "main",
+    "sourceVersion": "master",
     "artifacts": {
       "type": "NO_ARTIFACTS" 
     },
