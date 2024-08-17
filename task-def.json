@@ -7,7 +7,7 @@
     "containerDefinitions": [
         {
             "name": "php-app",
-            "image": "<IMAGE1_NAME>",
+            "image": "<IMAGE_URI>", 
             "essential": true, 
             "taskDefinitionArn": "<TASK_DEFINITION>",
             "portMappings": [
