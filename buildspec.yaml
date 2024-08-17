@@ -16,13 +16,13 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - printf '[{"name":"'"$CONTAINER_NAME"'","imageUri":"'"$AWS_ACCOUNT_ID"'.dkr.ecr.'"$AWS_REGION"'.amazonaws.com/'"$IMAGE_REPO_NAME"':'"$IMAGE_TAG"'"}]' > imagedefinitions.json
-      - cat imagedefinitions.json
+      - printf '[{"name":"'"$CONTAINER_NAME"'","imageUri":"'"$AWS_ACCOUNT_ID"'.dkr.ecr.'"$AWS_REGION"'.amazonaws.com/'"$IMAGE_REPO_NAME"':'"$IMAGE_TAG"'"}]' > imageDetail.json
+      - cat imageDetail.json
       - echo Build completed on `date`
 
 artifacts:
   files: 
-    - imagedefinitions.json  
+    - image*.json  
     - 'appspec.yaml'
     - 'task-def.json'
   secondary-artifacts:
@@ -32,4 +32,4 @@ artifacts:
         - task-def.json
     ImageArtifact:
       files:
-        - imagedefinitions.json           
+        - imageDetail.json     
