@@ -4,7 +4,7 @@
     "taskDefinition": "ecs-bg-task-def",
     "loadBalancers": [
         {
-            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:580285112064:targetgroup/bgprodtarget/b851bea10e7a43ea",
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:5802851120:targetgroup/bgprodtarget/b851bea10e7a43ea",
             "containerName": "php-app",
             "containerPort": 80
         }

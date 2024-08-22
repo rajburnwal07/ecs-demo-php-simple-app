@@ -15,6 +15,7 @@
        }
     },
     "deploymentGroupName": "ecs-bluegreen-dg",
+    "deploymentConfigName": "CodeDeployDefault.ECSAllAtOnce",
     "deploymentStyle": {
        "deploymentOption": "WITH_TRAFFIC_CONTROL",
        "deploymentType": "BLUE_GREEN"
@@ -32,13 +33,13 @@
            ],
            "prodTrafficRoute": {
                "listenerArns": [
-                   "arn:aws:elasticloadbalancing:us-east-1:580285112064:listener/app/ecs-bg-alb/bf7965b27a2a9e9e/0b2713803feeaf3f"
+                   "arn:aws:elasticloadbalancing:us-east-1:5802851120:listener/app/ecs-bg-alb/bf7965b27a2a9e9e/0b2713803feeaf3f"
                ]
            }
          }
        ]
     },
-    "serviceRoleArn": "arn:aws:iam::580285112064:role/ecsCodedeployRole",
+    "serviceRoleArn": "arn:aws:iam::5802851120:role/ecsCodedeployRole",
     "ecsServices": [
         {
             "serviceName": "ecs-service-bluegreen",
